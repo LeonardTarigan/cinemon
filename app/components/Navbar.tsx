@@ -37,7 +37,7 @@ function Navbar() {
                 CM
             </Link>
 
-            <ul className='hidden gap-7 font-bold md:flex'>
+            <ul className='hidden gap-7 font-semibold md:flex'>
                 <li className='cursor-pointer bg-gradient-to-r from-emerald-500 to-sky-500 bg-clip-text transition-all duration-100 hover:text-transparent'>
                     Popular
                 </li>

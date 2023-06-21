@@ -11,11 +11,8 @@ const getColor = (vote: number) => {
 
 function MovieCard({ title, poster_path, release_date, vote_average }: Movie) {
     return (
-        <Link
-            href={'/'}
-            className='group rounded-md bg-slate-800 hover:bg-slate-700'
-        >
-            <div className='relative aspect-[2/3] w-44'>
+        <div className='group carousel-item flex w-44 flex-col rounded-md bg-slate-800 hover:bg-slate-700'>
+            <div className='relative aspect-[2/3] w-44 bg-slate-700'>
                 <Image
                     src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
                     alt={title + ' poster'}
@@ -36,9 +33,9 @@ function MovieCard({ title, poster_path, release_date, vote_average }: Movie) {
                 <p className='text-xs font-medium text-slate-400'>
                     {release_date}
                 </p>
-                <h2 className='line-clamp-2 font-bold'>{title}</h2>
+                <h2 className='line-clamp-1 font-bold'>{title}</h2>
             </div>
-        </Link>
+        </div>
     );
 }
 
