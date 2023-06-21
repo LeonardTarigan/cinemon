@@ -1,3 +1,4 @@
+import { formatDate } from '@/utils/globalFunctions';
 import { Movie } from '@/utils/interfaces';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -31,7 +32,7 @@ function MovieCard({ title, poster_path, release_date, vote_average }: Movie) {
                     </span>
                 </div>
                 <p className='text-xs font-medium text-slate-400'>
-                    {release_date}
+                    {formatDate(release_date)}
                 </p>
                 <h2 className='line-clamp-1 font-bold'>{title}</h2>
             </div>
