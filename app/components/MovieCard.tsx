@@ -11,13 +11,13 @@ const getColor = (vote: number) => {
 
 function MovieCard({ title, poster_path, release_date, vote_average }: Movie) {
     return (
-        <div className='group carousel-item flex w-44 flex-col rounded-md bg-slate-800 hover:bg-slate-700'>
+        <div className='group carousel-item flex w-44 flex-col overflow-hidden rounded-md bg-slate-800 hover:bg-slate-700'>
             <div className='relative aspect-[2/3] w-44 bg-slate-700'>
                 <Image
                     src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
                     alt={title + ' poster'}
                     fill
-                    className='rounded-t-md object-cover brightness-75 transition-all duration-100 group-hover:brightness-100'
+                    className='object-cover brightness-75 transition-all duration-100 group-hover:brightness-100'
                 />
             </div>
             <div className='relative px-4 pb-6 pt-8 text-sm'>
