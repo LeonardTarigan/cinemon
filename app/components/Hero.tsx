@@ -1,7 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import React from 'react';
 import MoviePoster from '../../public/hero-poster.jpg';
 import { Righteous } from 'next/font/google';
+import { motion } from 'framer-motion';
 
 const logoFont = Righteous({ weight: '400', subsets: ['latin'] });
 
@@ -17,19 +20,28 @@ function Hero() {
                     className='-z-10 object-cover brightness-50'
                 />
 
-                <h1 className='text-5xl font-bold'>
+                <motion.h1
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.7 }}
+                    className='text-5xl font-bold'
+                >
                     WELCOME TO{' '}
                     <span
                         className={`${logoFont.className} bg-gradient-to-r from-emerald-500 to-sky-500 bg-clip-text text-transparent`}
                     >
                         CINEMON
                     </span>
-                </h1>
-                <p>
+                </motion.h1>
+                <motion.p
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2, duration: 0.7 }}
+                >
                     Discover an extensive collection of movies, TV shows, and
                     fascinating personalities. Explore our vast library now and
                     experience the magic of cinema like never before.
-                </p>
+                </motion.p>
 
                 <div className='flex w-full items-center backdrop-blur-md sm:w-2/3'>
                     <input

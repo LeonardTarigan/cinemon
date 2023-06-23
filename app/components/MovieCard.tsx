@@ -1,7 +1,6 @@
 import { formatDate } from '@/utils/globalFunctions';
 import { Movie } from '@/utils/interfaces';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const getColor = (vote: number) => {
     if (vote >= 7.0) return 'text-emerald-500 border-emerald-500';
