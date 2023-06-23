@@ -1,9 +1,10 @@
 import { CustomableIcon } from '@/utils/interfaces';
 import { motion } from 'framer-motion';
 
-function MenuIcon({ className }: CustomableIcon) {
+function XIcon({ className }: CustomableIcon) {
     return (
         <motion.svg
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
                 type: 'spring',
@@ -20,10 +21,10 @@ function MenuIcon({ className }: CustomableIcon) {
             <path
                 strokeLinecap='round'
                 strokeLinejoin='round'
-                d='M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25'
+                d='M6 18L18 6M6 6l12 12'
             />
         </motion.svg>
     );
 }
 
-export default MenuIcon;
+export default XIcon;
