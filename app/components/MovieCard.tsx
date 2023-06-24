@@ -1,6 +1,7 @@
 import { formatDate } from '@/utils/globalFunctions';
 import { Movie } from '@/utils/interfaces';
 import Image from 'next/image';
+import { CSSProperties } from 'react';
 
 const getColor = (vote: number) => {
     if (vote >= 7.0) return 'text-emerald-500 border-emerald-500';
@@ -22,12 +23,21 @@ function MovieCard({ title, poster_path, release_date, vote_average }: Movie) {
             </div>
             <div className='relative px-4 pb-6 pt-8 text-sm'>
                 <div
+                    style={
+                        {
+                            '--value': vote_average * 10,
+                            '--size': '3.2rem',
+                            '--thickness': '4px',
+                        } as CSSProperties
+                    }
                     className={`${getColor(
                         vote_average
-                    )} absolute -top-5 flex h-10 w-10 items-center justify-center rounded-full border-2 bg-slate-800 p-2 font-bold`}
+                    )} radial-progress absolute -top-8  bg-slate-800 text-xs font-bold`}
                 >
                     <span>
-                        {vote_average > 0 ? vote_average.toFixed(1) : 'NR'}
+                        {vote_average > 0
+                            ? `${Number(vote_average.toFixed(1)) * 10}%`
+                            : 'NR'}
                     </span>
                 </div>
                 <p className='text-xs font-medium text-slate-400'>
