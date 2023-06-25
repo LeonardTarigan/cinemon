@@ -1,6 +1,6 @@
-import { getMovieList } from './api';
-import Hero from './components/Hero';
-import MovieList from './components/MovieList';
+import { getMovieList } from '../api';
+import Hero from '../components/Hero';
+import MovieList from '../components/MovieList';
 
 export default async function Home() {
     const playingMoviesData = await getMovieList({ type: 'now_playing' });

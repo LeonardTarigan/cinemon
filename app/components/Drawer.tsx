@@ -1,5 +1,7 @@
+import { menus } from '@/utils/navMenus';
 import { motion } from 'framer-motion';
 import { Righteous } from 'next/font/google';
+import Link from 'next/link';
 
 const logoFont = Righteous({ weight: '400', subsets: ['latin'] });
 
@@ -25,17 +27,19 @@ function Drawer() {
 
             <hr className='border-slate-600' />
 
-            <ul className='font-semibold'>
-                <li className='cursor-pointer rounded-md from-emerald-500 to-sky-500 p-2 transition-all duration-100 hover:bg-gradient-to-r'>
-                    Popular
-                </li>
-                <li className='cursor-pointer rounded-md from-emerald-500 to-sky-500 p-2 transition-all duration-100 hover:bg-gradient-to-r'>
-                    Now Playing
-                </li>
-                <li className='cursor-pointer rounded-md from-emerald-500 to-sky-500 p-2 transition-all duration-100 hover:bg-gradient-to-r'>
-                    Upcoming
-                </li>
-            </ul>
+            <div className='flex flex-col font-semibold'>
+                {menus.map((menu, index) => {
+                    return (
+                        <Link
+                            key={index}
+                            href={menu.route}
+                            className='w-full cursor-pointer rounded-md from-emerald-500 to-sky-500 p-2 transition-all duration-100 hover:bg-gradient-to-r'
+                        >
+                            {menu.name}
+                        </Link>
+                    );
+                })}
+            </div>
         </motion.div>
     );
 }

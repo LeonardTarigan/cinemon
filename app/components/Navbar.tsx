@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import Drawer from './Drawer';
 import MenuIcon from './icons/MenuIcon';
 import XIcon from './icons/XIcon';
+import { menus } from '@/utils/navMenus';
 
 const logoFont = Righteous({ weight: '400', subsets: ['latin'] });
 
@@ -16,7 +17,7 @@ function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollTop = window.pageYOffset;
+            const scrollTop = window.scrollY;
             setIsScrolled(scrollTop >= 80);
         };
 
@@ -43,15 +44,18 @@ function Navbar() {
                 </Link>
 
                 <ul className='hidden gap-7 font-semibold md:flex'>
-                    <li className='cursor-pointer bg-gradient-to-r from-emerald-500 to-sky-500 bg-clip-text transition-all duration-100 hover:text-transparent'>
-                        Popular
-                    </li>
-                    <li className='cursor-pointer bg-gradient-to-r from-emerald-500 to-sky-500 bg-clip-text transition-all duration-100 hover:text-transparent'>
-                        Now Playing
-                    </li>
-                    <li className='cursor-pointer bg-gradient-to-r from-emerald-500 to-sky-500 bg-clip-text transition-all duration-100 hover:text-transparent'>
-                        Upcoming
-                    </li>
+                    {menus.map((menu, index) => {
+                        return (
+                            <li key={index}>
+                                <Link
+                                    href={menu.route}
+                                    className='cursor-pointer bg-gradient-to-r from-emerald-500 to-sky-500 bg-clip-text transition-all duration-100 hover:text-transparent'
+                                >
+                                    {menu.name}
+                                </Link>
+                            </li>
+                        );
+                    })}
                 </ul>
 
                 <motion.button
