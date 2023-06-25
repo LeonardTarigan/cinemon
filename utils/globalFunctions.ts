@@ -26,3 +26,12 @@ export function getNumberSuffix(day: number): string {
             return 'th';
     }
 }
+
+export const convertToUrlFormat = (title: string) => {
+    title = title.trim();
+    title = title.replace(/[-:.]/g, '');
+    title = title.replace(/\s+/g, '-');
+    title = title.toLowerCase();
+
+    return title;
+};

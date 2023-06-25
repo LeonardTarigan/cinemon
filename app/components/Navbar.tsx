@@ -1,13 +1,12 @@
 'use client';
 
+import { AnimatePresence, motion } from 'framer-motion';
 import { Righteous } from 'next/font/google';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import MenuIcon from './icons/MenuIcon';
+import { useEffect, useState } from 'react';
 import Drawer from './Drawer';
-import { AnimatePresence } from 'framer-motion';
+import MenuIcon from './icons/MenuIcon';
 import XIcon from './icons/XIcon';
-import { motion } from 'framer-motion';
 
 const logoFont = Righteous({ weight: '400', subsets: ['latin'] });
 

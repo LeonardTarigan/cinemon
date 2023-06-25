@@ -1,6 +1,7 @@
-import { formatDate } from '@/utils/globalFunctions';
+import { convertToUrlFormat, formatDate } from '@/utils/globalFunctions';
 import { Movie } from '@/utils/interfaces';
 import Image from 'next/image';
+import Link from 'next/link';
 import { CSSProperties } from 'react';
 
 const getColor = (vote: number) => {
@@ -10,9 +11,18 @@ const getColor = (vote: number) => {
     return 'text-slate-400 border-slate-400';
 };
 
-function MovieCard({ title, poster_path, release_date, vote_average }: Movie) {
+function MovieCard({
+    id,
+    title,
+    poster_path,
+    release_date,
+    vote_average,
+}: Movie) {
     return (
-        <div className='group carousel-item flex w-44 flex-col overflow-hidden rounded-md bg-slate-800 hover:bg-slate-700'>
+        <Link
+            href={`/movie/${id}-${convertToUrlFormat(title)}`}
+            className='group carousel-item flex w-44 flex-col overflow-hidden rounded-md bg-slate-800 hover:bg-slate-700'
+        >
             <div className='relative aspect-[2/3] w-44 bg-slate-700'>
                 <Image
                     src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
@@ -45,7 +55,7 @@ function MovieCard({ title, poster_path, release_date, vote_average }: Movie) {
                 </p>
                 <h2 className='line-clamp-1 font-bold'>{title}</h2>
             </div>
-        </div>
+        </Link>
     );
 }
 

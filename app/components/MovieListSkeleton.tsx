@@ -1,5 +1,3 @@
-import React from 'react';
-
 function MovieListSkeleton() {
     return (
         <section className='px-5 md:px-20'>
