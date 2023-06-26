@@ -26,7 +26,7 @@ export default function RootLayout({
     return (
         <html lang='en'>
             <body
-                className={`${mainFont.className} mx-auto max-w-screen-xl bg-slate-900 text-white`}
+                className={`${mainFont.className} mx-auto max-w-screen-2xl bg-slate-900 text-white`}
             >
                 {children}
             </body>

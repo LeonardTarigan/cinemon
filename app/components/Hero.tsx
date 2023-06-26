@@ -6,7 +6,7 @@ const logoFont = Righteous({ weight: '400', subsets: ['latin'] });
 
 function Hero() {
     return (
-        <section className='relative flex h-screen items-center justify-center bg-gradient-to-t from-slate-900 to-transparent md:h-[35rem]'>
+        <section className='relative flex h-screen items-center justify-center bg-gradient-to-t from-slate-900 to-transparent'>
             <div className='flex flex-col items-center gap-5 p-5 text-center md:w-4/5 lg:w-2/3'>
                 <Image
                     src={MoviePoster}

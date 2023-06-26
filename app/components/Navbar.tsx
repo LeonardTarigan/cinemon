@@ -30,7 +30,7 @@ function Navbar() {
     return (
         <>
             <nav
-                className={`fixed z-40 mx-auto flex w-full max-w-screen-xl items-center justify-between border-b px-5 py-5 md:px-20  ${
+                className={`fixed z-40 mx-auto flex w-full max-w-screen-2xl items-center justify-between border-b px-5 py-5 md:px-20  ${
                     isScrolled
                         ? 'border-b-slate-600 backdrop-blur-lg'
                         : 'border-b-transparent bg-gradient-to-b from-slate-900 to-transparent'
