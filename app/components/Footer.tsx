@@ -19,7 +19,7 @@ const footerContents = [
 
 function Footer() {
     return (
-        <footer className='flex flex-col items-center justify-between gap-10 border-t border-slate-600 px-5 py-10 text-sm sm:flex-row sm:items-start md:px-20'>
+        <footer className='mt-20 flex flex-col items-center justify-between gap-10 border-t border-slate-600 px-5 py-10 text-sm sm:flex-row sm:items-start md:px-20'>
             <div className='flex gap-7'>
                 {footerContents.map((item, index) => {
                     return (

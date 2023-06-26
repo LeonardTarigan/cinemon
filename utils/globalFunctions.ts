@@ -1,3 +1,5 @@
+import { Genre, ProductionCompany } from './interfaces';
+
 export function formatDate(dateString: string): string {
     const options: Intl.DateTimeFormatOptions = {
         month: 'long',
@@ -9,6 +11,10 @@ export function formatDate(dateString: string): string {
     const day: number = date.getDate();
     const suffix: string = getNumberSuffix(day);
     return formattedDate.replace(/\d+/, day + suffix);
+}
+
+export function extractYear(dateString: string): string {
+    return dateString.split('-')[0];
 }
 
 export function getNumberSuffix(day: number): string {
@@ -27,11 +33,30 @@ export function getNumberSuffix(day: number): string {
     }
 }
 
-export const convertToUrlFormat = (title: string) => {
+export function convertToUrlFormat(title: string): string {
     title = title.trim();
     title = title.replace(/[-:.]/g, '');
     title = title.replace(/\s+/g, '-');
     title = title.toLowerCase();
 
     return title;
-};
+}
+
+export function joinNames<T extends { name: string }>(data: T[]): string {
+    return data.map((item) => item.name).join(', ');
+}
+
+export function formatMinutes(minutes: number): string {
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+    return `${hours}h ${remainingMinutes}m`;
+}
+
+export function formatMoney(amount: number) {
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
+
+    return formatter.format(amount);
+}

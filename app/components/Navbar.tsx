@@ -1,5 +1,6 @@
 'use client';
 
+import { menus } from '@/utils/navMenus';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Righteous } from 'next/font/google';
 import Link from 'next/link';
@@ -7,7 +8,6 @@ import { useEffect, useState } from 'react';
 import Drawer from './Drawer';
 import MenuIcon from './icons/MenuIcon';
 import XIcon from './icons/XIcon';
-import { menus } from '@/utils/navMenus';
 
 const logoFont = Righteous({ weight: '400', subsets: ['latin'] });
 
@@ -30,10 +30,10 @@ function Navbar() {
     return (
         <>
             <nav
-                className={`fixed z-40 mx-auto flex w-full max-w-screen-2xl items-center justify-between border-b px-5 py-5 md:px-20  ${
+                className={`fixed z-40 mx-auto flex w-full max-w-screen-2xl items-center justify-between  px-5 py-5 md:px-20  ${
                     isScrolled
-                        ? 'border-b-slate-600 backdrop-blur-lg'
-                        : 'border-b-transparent bg-gradient-to-b from-slate-900 to-transparent'
+                        ? 'border-b border-b-slate-600 backdrop-blur-lg'
+                        : ''
                 }`}
             >
                 <Link
