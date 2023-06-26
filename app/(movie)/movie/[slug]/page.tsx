@@ -74,7 +74,7 @@ async function MovieDetail({ params: { slug } }: MovieDetailParams) {
                                 <span>{formatMinutes(runtime)}</span>
                             </div>
                         </div>
-                        <div className='flex items-center gap-4'>
+                        <div className='flex items-center gap-2 sm:gap-4'>
                             <RadialProgress
                                 voteAverage={vote_average}
                                 size='3.5rem'
